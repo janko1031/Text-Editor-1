@@ -41,7 +41,7 @@ public class TxtGUI extends JFrame {
 		});
 	}
 
-	public TxtGUI() {
+public TxtGUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 814, 470);
 		contentPane = new JPanel();
