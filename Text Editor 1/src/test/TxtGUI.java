@@ -6,13 +6,7 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
-//import javax.swing.text.DefaultEditorKit.CopyAction;
-//import javax.swing.text.DefaultEditorKit.CutAction;
-//import javax.swing.text.JTextComponent;
-//
-//import org.omg.CORBA.PUBLIC_MEMBER;
-//
-//import java.awt.datatransfer.Clipboard;
+
 
 import java.awt.event.*;
 
