@@ -1,7 +1,7 @@
 package test;
 
 import javax.swing.JTextArea;
-//Is thi really working?
+//Is this really working?
 //Yes it is working :)
 //Testing one more time
 public class CutCopyPaste {
