@@ -1,7 +1,7 @@
 package test;
 
 import javax.swing.JTextArea;
-
+//Is thi really working?
 public class CutCopyPaste {
 	final getClipboard Clip1 = new getClipboard();
 
