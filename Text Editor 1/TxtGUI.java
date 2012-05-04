@@ -2,7 +2,6 @@ package test;
 
 import java.awt.*;
 
-
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
@@ -19,9 +18,6 @@ import java.awt.event.*;
 import java.awt.print.PageFormat;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
-
-
-
 
 public class TxtGUI extends JFrame {
 
@@ -60,7 +56,7 @@ public class TxtGUI extends JFrame {
 		});
 		final DialogS dialog = new DialogS();
 		scrollPane.setViewportView(textArea);
-//		String globalText = textArea.getText();
+		// String globalText = textArea.getText();
 		final StatusBar st = new StatusBar();
 		st.setVisible(false);
 		getContentPane().add(st, java.awt.BorderLayout.SOUTH);
@@ -71,7 +67,7 @@ public class TxtGUI extends JFrame {
 		textArea.getInputMap()
 				.put(KeyStroke.getKeyStroke("control p"), "Print");
 
-		dragDrop dropText= new dragDrop();
+		dragDrop dropText = new dragDrop();
 		dropText.drop(textArea);
 
 		JPopupMenu popupMenu = new JPopupMenu();
@@ -165,7 +161,6 @@ public class TxtGUI extends JFrame {
 		JMenuItem mntmNew = new JMenuItem("New");
 		mntmNew.addActionListener(new ActionListener() {
 
-		
 			public void actionPerformed(ActionEvent arg0) {
 				if (!textArea.getText().equals(null)) {
 
@@ -239,48 +234,6 @@ public class TxtGUI extends JFrame {
 
 			}
 		});
-
-		// final UndoManager undoManager = new UndoManager();
-		//
-		// public TxtGUI() {
-		// super("Undo/Redo Demo");
-		//
-		// mntmUndo.setEnabled(false);
-		//
-		//
-		//
-		//
-		//
-		// textArea.getDocument().addUndoableEditListener(
-		// new UndoableEditListener() {
-		// public void undoableEditHappened(UndoableEditEvent e) {
-		// undoManager.addEdit(e.getEdit());
-		// updateButtons();
-		// }
-		// });
-
-		//
-		// JMenuItem mntmUndo = new JMenuItem("Undo      Ctrl+z");
-		// mntmUndo.addActionListener(new ActionListener() {
-		// public void actionPerformed(ActionEvent e) {
-		// undoManager.undo();
-		// } catch (CannotRedoException cre) {
-		// cre.printStackTrace();
-		// }
-		// updateButtons();
-		// }
-		// });
-		//
-		// mnEdit.add(mntmUndo);
-		// public void updateButtons() {
-		// mntmUndo.setText(undoManager.getUndoPresentationName());
-		//
-		// // mntmUndo.setEnabled(undoManager.canUndo());
-		// //
-		// }
-		//
-		// public static void main(String argv[]) {
-		// new UndoRedoTextArea();
 
 		JSeparator separator_3 = new JSeparator();
 		mnEdit.add(separator_3);
@@ -378,7 +331,7 @@ public class TxtGUI extends JFrame {
 			}
 		});
 		mnView.add(chWWrap);
-		
+
 		JMenuItem mntmAddLineNumbers = new JMenuItem("Add line numbers");
 		mntmAddLineNumbers.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -391,8 +344,8 @@ public class TxtGUI extends JFrame {
 
 				}
 
-					textArea.setText(txtLine);
-			
+				textArea.setText(txtLine);
+
 			}
 		});
 		mnView.add(mntmAddLineNumbers);
@@ -412,10 +365,6 @@ public class TxtGUI extends JFrame {
 
 		mnHelp.add(mntmAbout);
 
-	}
-
-	public TxtGUI(String globalText) {
-		// TODO Auto-generated constructor stub
 	}
 
 	private static void addPopup(Component component, final JPopupMenu popup) {
