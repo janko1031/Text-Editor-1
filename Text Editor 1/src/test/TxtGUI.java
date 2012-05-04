@@ -14,7 +14,7 @@ import java.awt.print.PageFormat;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
 
-
+//Testing remote control
 
 
 public class TxtGUI extends JFrame {
