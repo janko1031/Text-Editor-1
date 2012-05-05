@@ -53,7 +53,7 @@ public class Open {
 		}
 
 		catch (NullPointerException ex) {
-			txtArea.append("Open File Cancelled:\n" + ex.getMessage() + "\n");
+			
 		}
 	}
 

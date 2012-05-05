@@ -48,7 +48,7 @@ public class TxtGUI extends JFrame {
 		});
 		final DialogS dialog = new DialogS();
 		scrollPane.setViewportView(textArea);
-		// String globalText = textArea.getText();
+
 		final StatusBar st = new StatusBar();
 		st.setVisible(false);
 		getContentPane().add(st, java.awt.BorderLayout.SOUTH);
@@ -56,8 +56,6 @@ public class TxtGUI extends JFrame {
 		textArea.getInputMap().put(KeyStroke.getKeyStroke("control c"), "Copy");
 		textArea.getInputMap()
 				.put(KeyStroke.getKeyStroke("control v"), "Paste");
-		textArea.getInputMap()
-				.put(KeyStroke.getKeyStroke("control p"), "Print");
 
 		dragDrop dropText = new dragDrop();
 		dropText.drop(textArea);
@@ -154,13 +152,22 @@ public class TxtGUI extends JFrame {
 		mntmNew.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent arg0) {
-				if (!textArea.getText().equals(null)) {
+			
+				JOptionPane pane = new JOptionPane(
+						"Save your documnet before staring new one?");
+				Object[] options = new String[] { "Yes", "No" };
+				pane.setOptions(options);
+				JDialog dialog = pane.createDialog(new JFrame(),
+						"Save your document");
+				dialog.show();
+				Object obj = pane.getValue();
+				if (obj.toString().equals("Yes")) {
 
-					dialog.show();
-				} else {
-
-					textArea.setText(null);
+					SaveAs save = new SaveAs();
+					save.saveAs(textArea);
 				}
+				else textArea.setText(null);
+
 			}
 
 		});
@@ -176,7 +183,6 @@ public class TxtGUI extends JFrame {
 			}
 		});
 		mnFile.add(mntmOpen);
-
 
 		JMenuItem mntmExit = new JMenuItem("Exit");
 		mntmExit.addActionListener(new ActionListener() {
@@ -195,7 +201,7 @@ public class TxtGUI extends JFrame {
 		});
 		mnFile.add(mntmSaveAs);
 
-		JMenuItem mntmPrint = new JMenuItem("Print... Ctrl+p");
+		JMenuItem mntmPrint = new JMenuItem("Print... ");
 		mntmPrint.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				PrinterJob pjob = PrinterJob.getPrinterJob();
@@ -228,8 +234,6 @@ public class TxtGUI extends JFrame {
 			}
 		});
 
-		
-
 		JSeparator separator_3 = new JSeparator();
 		mnEdit.add(separator_3);
 		mnEdit.add(mntmCut);
@@ -254,9 +258,12 @@ public class TxtGUI extends JFrame {
 				paste.Paste(textArea);
 
 			}
+
 		});
 		mnEdit.add(mntmPaste);
 
+		JSeparator separator = new JSeparator();
+		mnEdit.add(separator);
 		JMenuItem mntmClear = new JMenuItem("Clear all");
 		mntmClear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -282,10 +289,6 @@ public class TxtGUI extends JFrame {
 		});
 		mnEdit.add(mntmDelete_1);
 
-		
-
-		JSeparator separator = new JSeparator();
-		mnEdit.add(separator);
 		mnEdit.add(mntmSelectAll);
 		mnEdit.add(mntmClear);
 
@@ -295,6 +298,26 @@ public class TxtGUI extends JFrame {
 
 			}
 		});
+
+		JSeparator separator1 = new JSeparator();
+		mnEdit.add(separator1);
+		JMenuItem mntmLines = new JMenuItem("Add line numbers");
+
+		mntmLines.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent arg0) {
+				String txt1 = textArea.getText();
+				String liniije[] = txt1.split("\n");
+				String txtLine = "";
+				for (int i = 0; i < liniije.length; i++) {
+					txtLine = txtLine + i + ": " + liniije[i] + "\n";
+
+				}
+				textArea.setText(txtLine);
+			}
+
+		});
+		mnEdit.add(mntmLines);
 		menuBar.add(mnView);
 
 		final JCheckBoxMenuItem chSTbar = new JCheckBoxMenuItem("Satus Bar");
@@ -326,27 +349,25 @@ public class TxtGUI extends JFrame {
 		});
 		mnView.add(chWWrap);
 
-		final JCheckBoxMenuItem chLine = new JCheckBoxMenuItem(
-				"Show line number");
-		chLine.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				String txt1 = textArea.getText();
-				String liniije[] = txt1.split("\n");
-				String txtLine = "";
-
-				for (int i = 0; i < liniije.length; i++) {
-					txtLine = txtLine + i + ": " + liniije[i] + "\n";
-
-				}
-
-				if (!chLine.isSelected()) {
-
-					textArea.setText(txt1);
-				} else
-					textArea.setText(txtLine);
-			}
-		});
-		mnView.add(chLine);
+		// final JCheckBoxMenuItem chLine = new JCheckBoxMenuItem(
+		// "Add line number");
+		// chLine.addActionListener(new ActionListener() {
+		// public void actionPerformed(ActionEvent arg0) {
+		// String txt1 = textArea.getText();
+		// String liniije[] = txt1.split("\n");
+		// String txtLine = "";
+		// for (int i = 0; i < liniije.length; i++) {
+		// txtLine = txtLine + i + ": " + liniije[i] + "\n";
+		//
+		// }
+		// if (!chLine.isSelected()) {
+		//
+		// textArea.setText(txt1);
+		// } else
+		// textArea.setText(txtLine);
+		// }
+		// });
+		// mnView.add(chLine);
 
 		JMenu mnHelp = new JMenu("Help");
 		menuBar.add(mnHelp);
@@ -355,8 +376,8 @@ public class TxtGUI extends JFrame {
 		mntmAbout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Component frame = null;
-				JOptionPane
-						.showMessageDialog(frame, "This is cool text editor");
+				JOptionPane.showMessageDialog(frame,
+						"This is basic text editor");
 
 			}
 		});
@@ -364,8 +385,6 @@ public class TxtGUI extends JFrame {
 		mnHelp.add(mntmAbout);
 
 	}
-
-	
 
 	private static void addPopup(Component component, final JPopupMenu popup) {
 		component.addMouseListener(new MouseAdapter() {

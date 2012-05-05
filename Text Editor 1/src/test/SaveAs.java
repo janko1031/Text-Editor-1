@@ -16,7 +16,7 @@ public class SaveAs {
 
 		JFileChooser fileC = new JFileChooser();
 		 FileNameExtensionFilter filter = new FileNameExtensionFilter(
-		"Text files", ".txt");
+		"Text files", "txt");
 		 fileC.setFileFilter(filter);
 		int ret = fileC.showSaveDialog(fileC);
 
