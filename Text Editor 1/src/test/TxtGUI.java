@@ -349,25 +349,6 @@ public class TxtGUI extends JFrame {
 		});
 		mnView.add(chWWrap);
 
-		// final JCheckBoxMenuItem chLine = new JCheckBoxMenuItem(
-		// "Add line number");
-		// chLine.addActionListener(new ActionListener() {
-		// public void actionPerformed(ActionEvent arg0) {
-		// String txt1 = textArea.getText();
-		// String liniije[] = txt1.split("\n");
-		// String txtLine = "";
-		// for (int i = 0; i < liniije.length; i++) {
-		// txtLine = txtLine + i + ": " + liniije[i] + "\n";
-		//
-		// }
-		// if (!chLine.isSelected()) {
-		//
-		// textArea.setText(txt1);
-		// } else
-		// textArea.setText(txtLine);
-		// }
-		// });
-		// mnView.add(chLine);
 
 		JMenu mnHelp = new JMenu("Help");
 		menuBar.add(mnHelp);
@@ -376,8 +357,11 @@ public class TxtGUI extends JFrame {
 		mntmAbout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Component frame = null;
+				
 				JOptionPane.showMessageDialog(frame,
-						"This is basic text editor");
+					    "This is EasyNotes, basic text editor",
+					    "EasyNotes",
+					    JOptionPane.PLAIN_MESSAGE);
 
 			}
 		});
