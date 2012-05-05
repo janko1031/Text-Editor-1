@@ -154,7 +154,7 @@ public class TxtGUI extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			
 				JOptionPane pane = new JOptionPane(
-						"Save your documnet before staring new one?");
+						"Save your document before starting new one?");
 				Object[] options = new String[] { "Yes", "No" };
 				pane.setOptions(options);
 				JDialog dialog = pane.createDialog(new JFrame(),
