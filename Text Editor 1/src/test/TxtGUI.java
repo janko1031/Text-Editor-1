@@ -46,7 +46,7 @@ public class TxtGUI extends JFrame {
 			public void keyReleased(KeyEvent arg0) {
 			}
 		});
-		final DialogS dialog = new DialogS();
+		
 		scrollPane.setViewportView(textArea);
 
 		final StatusBar st = new StatusBar();
