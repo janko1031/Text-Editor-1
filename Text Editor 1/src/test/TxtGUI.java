@@ -55,7 +55,7 @@ public TxtGUI() {
 		});
 		final DialogS dialog = new DialogS();
 		scrollPane.setViewportView(textArea);
-//		String globalText = textArea.getText();
+
 		final StatusBar st = new StatusBar();
 		st.setVisible(false);
 		getContentPane().add(st, java.awt.BorderLayout.SOUTH);
@@ -369,10 +369,6 @@ public TxtGUI() {
 
 		mnHelp.add(mntmAbout);
 
-	}
-
-	public TxtGUI(String globalText) {
-		// TODO Auto-generated constructor stub
 	}
 
 	private static void addPopup(Component component, final JPopupMenu popup) {
