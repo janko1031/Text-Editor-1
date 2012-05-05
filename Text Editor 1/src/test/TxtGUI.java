@@ -2,21 +2,14 @@ package test;
 
 import java.awt.*;
 
-
-
-
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-
-
 
 import java.awt.event.*;
 
 import java.awt.print.PageFormat;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
-
-
 
 public class TxtGUI extends JFrame {
 
@@ -36,7 +29,7 @@ public class TxtGUI extends JFrame {
 		});
 	}
 
-public TxtGUI() {
+	public TxtGUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 814, 470);
 		contentPane = new JPanel();
@@ -55,7 +48,7 @@ public TxtGUI() {
 		});
 		final DialogS dialog = new DialogS();
 		scrollPane.setViewportView(textArea);
-
+		// String globalText = textArea.getText();
 		final StatusBar st = new StatusBar();
 		st.setVisible(false);
 		getContentPane().add(st, java.awt.BorderLayout.SOUTH);
@@ -66,7 +59,7 @@ public TxtGUI() {
 		textArea.getInputMap()
 				.put(KeyStroke.getKeyStroke("control p"), "Print");
 
-		dragDrop dropText= new dragDrop();
+		dragDrop dropText = new dragDrop();
 		dropText.drop(textArea);
 
 		JPopupMenu popupMenu = new JPopupMenu();
@@ -81,7 +74,7 @@ public TxtGUI() {
 			}
 		});
 
-		JMenuItem mntmCut_1 = new JMenuItem("Copy          Ctrl+c");
+		JMenuItem mntmCut_1 = new JMenuItem("Copy Ctrl+c");
 		mntmCut_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				CutCopyPaste copy = new CutCopyPaste();
@@ -90,7 +83,7 @@ public TxtGUI() {
 			}
 		});
 
-		JMenuItem mntmCut_3 = new JMenuItem("Cut             Ctrl+x");
+		JMenuItem mntmCut_3 = new JMenuItem("Cut Ctrl+x");
 		mntmCut_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				CutCopyPaste cut = new CutCopyPaste();
@@ -101,7 +94,7 @@ public TxtGUI() {
 		popupMenu.add(mntmCut_3);
 		popupMenu.add(mntmCut_1);
 
-		JMenuItem mntmPaste_1 = new JMenuItem("Paste          Ctrl+v");
+		JMenuItem mntmPaste_1 = new JMenuItem("Paste Ctrl+v");
 		mntmPaste_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
@@ -122,7 +115,7 @@ public TxtGUI() {
 			}
 		});
 
-		JMenuItem mntmDelete = new JMenuItem("Delete         Del");
+		JMenuItem mntmDelete = new JMenuItem("Delete Del");
 		mntmDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -160,7 +153,6 @@ public TxtGUI() {
 		JMenuItem mntmNew = new JMenuItem("New");
 		mntmNew.addActionListener(new ActionListener() {
 
-		
 			public void actionPerformed(ActionEvent arg0) {
 				if (!textArea.getText().equals(null)) {
 
@@ -185,7 +177,6 @@ public TxtGUI() {
 		});
 		mnFile.add(mntmOpen);
 
-	
 
 		JMenuItem mntmExit = new JMenuItem("Exit");
 		mntmExit.addActionListener(new ActionListener() {
@@ -204,7 +195,7 @@ public TxtGUI() {
 		});
 		mnFile.add(mntmSaveAs);
 
-		JMenuItem mntmPrint = new JMenuItem("Print...        Ctrl+p");
+		JMenuItem mntmPrint = new JMenuItem("Print... Ctrl+p");
 		mntmPrint.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				PrinterJob pjob = PrinterJob.getPrinterJob();
@@ -227,7 +218,7 @@ public TxtGUI() {
 		JMenu mnEdit = new JMenu("Edit");
 		menuBar.add(mnEdit);
 
-		JMenuItem mntmCut = new JMenuItem("Cut         Ctrl+x");
+		JMenuItem mntmCut = new JMenuItem("Cut Ctrl+x");
 		mntmCut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				CutCopyPaste cut = new CutCopyPaste();
@@ -243,7 +234,7 @@ public TxtGUI() {
 		mnEdit.add(separator_3);
 		mnEdit.add(mntmCut);
 
-		JMenuItem mntmCopy = new JMenuItem("Copy      Ctrl+c");
+		JMenuItem mntmCopy = new JMenuItem("Copy Ctrl+c");
 		mntmCopy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				CutCopyPaste copy = new CutCopyPaste();
@@ -254,7 +245,7 @@ public TxtGUI() {
 		});
 		mnEdit.add(mntmCopy);
 
-		JMenuItem mntmPaste = new JMenuItem("Paste      Ctrl+v");
+		JMenuItem mntmPaste = new JMenuItem("Paste Ctrl+v");
 		mntmPaste.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent arg0) {
@@ -273,7 +264,7 @@ public TxtGUI() {
 			}
 		});
 
-		JMenuItem mntmSelectAll = new JMenuItem("Select all    Ctrl+a");
+		JMenuItem mntmSelectAll = new JMenuItem("Select all Ctrl+a");
 		mntmSelectAll.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				textArea.selectAll();
@@ -281,7 +272,7 @@ public TxtGUI() {
 			}
 		});
 
-		JMenuItem mntmDelete_1 = new JMenuItem("Delete    Del");
+		JMenuItem mntmDelete_1 = new JMenuItem("Delete Del");
 		mntmDelete_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CutCopyPaste del = new CutCopyPaste();
@@ -291,8 +282,7 @@ public TxtGUI() {
 		});
 		mnEdit.add(mntmDelete_1);
 
-		JMenuItem mntmFind = new JMenuItem("Find          Ctrl+f");
-		mnEdit.add(mntmFind);
+		
 
 		JSeparator separator = new JSeparator();
 		mnEdit.add(separator);
@@ -320,7 +310,7 @@ public TxtGUI() {
 					st.setVisible(true);
 				} else
 					st.setVisible(false);
-				st.setText("words: " + words + "  Lines:" + l);
+				st.setText("words: " + words + " Lines:" + l);
 			}
 		});
 		mnView.add(chSTbar);
@@ -335,9 +325,10 @@ public TxtGUI() {
 			}
 		});
 		mnView.add(chWWrap);
-		
-		JMenuItem mntmAddLineNumbers = new JMenuItem("Add line numbers");
-		mntmAddLineNumbers.addActionListener(new ActionListener() {
+
+		final JCheckBoxMenuItem chLine = new JCheckBoxMenuItem(
+				"Show line number");
+		chLine.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String txt1 = textArea.getText();
 				String liniije[] = txt1.split("\n");
@@ -348,11 +339,14 @@ public TxtGUI() {
 
 				}
 
+				if (!chLine.isSelected()) {
+
+					textArea.setText(txt1);
+				} else
 					textArea.setText(txtLine);
-			
 			}
 		});
-		mnView.add(mntmAddLineNumbers);
+		mnView.add(chLine);
 
 		JMenu mnHelp = new JMenu("Help");
 		menuBar.add(mnHelp);
@@ -362,7 +356,7 @@ public TxtGUI() {
 			public void actionPerformed(ActionEvent arg0) {
 				Component frame = null;
 				JOptionPane
-						.showMessageDialog(frame, "This is basic text editor");
+						.showMessageDialog(frame, "This is cool text editor");
 
 			}
 		});
@@ -370,6 +364,8 @@ public TxtGUI() {
 		mnHelp.add(mntmAbout);
 
 	}
+
+	
 
 	private static void addPopup(Component component, final JPopupMenu popup) {
 		component.addMouseListener(new MouseAdapter() {

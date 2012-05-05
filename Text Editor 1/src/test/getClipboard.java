@@ -18,7 +18,7 @@ import java.io.IOException;
 			try {
 				result1 = (String) clipboard.getData(DataFlavor.stringFlavor);
 			} catch (UnsupportedFlavorException | IOException e) {
-				// TODO Auto-generated catch block
+				
 				
 			}
 			return result1;
