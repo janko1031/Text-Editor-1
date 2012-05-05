@@ -68,7 +68,7 @@ public class DialogS extends JDialog  {
 					public void actionPerformed(ActionEvent e) {
 			
 		
-//			txtExt retTxt= new txtExt(t);
+
 						JFileChooser fileC = new JFileChooser();
 						
 						int ret = fileC.showSaveDialog(fileC);

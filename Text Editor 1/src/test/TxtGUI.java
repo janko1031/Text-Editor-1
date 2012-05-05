@@ -17,8 +17,6 @@ import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
 
 
-//Hello world
-//Hello Hello
 
 public class TxtGUI extends JFrame {
 
@@ -187,15 +185,7 @@ public TxtGUI() {
 		});
 		mnFile.add(mntmOpen);
 
-		JMenuItem mntmSave = new JMenuItem("Save");
-		mntmSave.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				// Tekst t1 = new Tekst();
-				// String tekst = textArea.getText();
-				// t1.upisi(tekst, File f);
-			}
-		});
-		mnFile.add(mntmSave);
+	
 
 		JMenuItem mntmExit = new JMenuItem("Exit");
 		mntmExit.addActionListener(new ActionListener() {
@@ -247,47 +237,7 @@ public TxtGUI() {
 			}
 		});
 
-		// final UndoManager undoManager = new UndoManager();
-		//
-		// public TxtGUI() {
-		// super("Undo/Redo Demo");
-		//
-		// mntmUndo.setEnabled(false);
-		//
-		//
-		//
-		//
-		//
-		// textArea.getDocument().addUndoableEditListener(
-		// new UndoableEditListener() {
-		// public void undoableEditHappened(UndoableEditEvent e) {
-		// undoManager.addEdit(e.getEdit());
-		// updateButtons();
-		// }
-		// });
-
-		//
-		// JMenuItem mntmUndo = new JMenuItem("Undo      Ctrl+z");
-		// mntmUndo.addActionListener(new ActionListener() {
-		// public void actionPerformed(ActionEvent e) {
-		// undoManager.undo();
-		// } catch (CannotRedoException cre) {
-		// cre.printStackTrace();
-		// }
-		// updateButtons();
-		// }
-		// });
-		//
-		// mnEdit.add(mntmUndo);
-		// public void updateButtons() {
-		// mntmUndo.setText(undoManager.getUndoPresentationName());
-		//
-		// // mntmUndo.setEnabled(undoManager.canUndo());
-		// //
-		// }
-		//
-		// public static void main(String argv[]) {
-		// new UndoRedoTextArea();
+		
 
 		JSeparator separator_3 = new JSeparator();
 		mnEdit.add(separator_3);
@@ -412,7 +362,7 @@ public TxtGUI() {
 			public void actionPerformed(ActionEvent arg0) {
 				Component frame = null;
 				JOptionPane
-						.showMessageDialog(frame, "This is cool text editor");
+						.showMessageDialog(frame, "This is basic text editor");
 
 			}
 		});
