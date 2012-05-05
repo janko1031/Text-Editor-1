@@ -72,7 +72,7 @@ public class TxtGUI extends JFrame {
 			}
 		});
 
-		JMenuItem mntmCut_1 = new JMenuItem("Copy Ctrl+c");
+		JMenuItem mntmCut_1 = new JMenuItem("Copy          Ctrl+c");
 		mntmCut_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				CutCopyPaste copy = new CutCopyPaste();
@@ -81,7 +81,7 @@ public class TxtGUI extends JFrame {
 			}
 		});
 
-		JMenuItem mntmCut_3 = new JMenuItem("Cut Ctrl+x");
+		JMenuItem mntmCut_3 = new JMenuItem("Cut             Ctrl+x");
 		mntmCut_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				CutCopyPaste cut = new CutCopyPaste();
@@ -92,7 +92,7 @@ public class TxtGUI extends JFrame {
 		popupMenu.add(mntmCut_3);
 		popupMenu.add(mntmCut_1);
 
-		JMenuItem mntmPaste_1 = new JMenuItem("Paste Ctrl+v");
+		JMenuItem mntmPaste_1 = new JMenuItem("Paste          Ctrl+v");
 		mntmPaste_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
@@ -113,7 +113,7 @@ public class TxtGUI extends JFrame {
 			}
 		});
 
-		JMenuItem mntmDelete = new JMenuItem("Delete Del");
+		JMenuItem mntmDelete = new JMenuItem("Delete           Del");
 		mntmDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -224,7 +224,7 @@ public class TxtGUI extends JFrame {
 		JMenu mnEdit = new JMenu("Edit");
 		menuBar.add(mnEdit);
 
-		JMenuItem mntmCut = new JMenuItem("Cut Ctrl+x");
+		JMenuItem mntmCut = new JMenuItem("Cut                Ctrl+x");
 		mntmCut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				CutCopyPaste cut = new CutCopyPaste();
@@ -238,7 +238,7 @@ public class TxtGUI extends JFrame {
 		mnEdit.add(separator_3);
 		mnEdit.add(mntmCut);
 
-		JMenuItem mntmCopy = new JMenuItem("Copy Ctrl+c");
+		JMenuItem mntmCopy = new JMenuItem("Copy             Ctrl+c");
 		mntmCopy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				CutCopyPaste copy = new CutCopyPaste();
@@ -249,7 +249,7 @@ public class TxtGUI extends JFrame {
 		});
 		mnEdit.add(mntmCopy);
 
-		JMenuItem mntmPaste = new JMenuItem("Paste Ctrl+v");
+		JMenuItem mntmPaste = new JMenuItem("Paste             Ctrl+v");
 		mntmPaste.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent arg0) {
@@ -271,7 +271,7 @@ public class TxtGUI extends JFrame {
 			}
 		});
 
-		JMenuItem mntmSelectAll = new JMenuItem("Select all Ctrl+a");
+		JMenuItem mntmSelectAll = new JMenuItem("Select all       Ctrl+a");
 		mntmSelectAll.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				textArea.selectAll();
